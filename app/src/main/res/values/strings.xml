@@ -1,0 +1,147 @@
+<resources>
+
+    <string name="loading_data">Carregando Dados...</string>
+    <string name="connecting_reticencias">Conectando...</string>
+    <string name="bluetooth_connected">Bluetooth Conectado!</string>
+    <string name="bluetooth_fail_connection">Falha na Conexão Bluetooth!</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="bluetooth_ble">Bluetooth BLE</string>
+    <string name="reading">Leitura</string>
+    <string name="btclass">Classe</string>
+    <string name="menu_starting">Menu Inicial</string>
+    <string name="connection_bluetooth">Conexões Bluetooth</string>
+    <string name="search_devices">Buscar Dispositivos</string>
+    <string name="leitura">Leitura</string>
+    <string name="device_not_supported_bluetooth_ble">Seu dispositivo não suporta o Bluetooth BLE!</string>
+    <string name="fail_initialized_reading">Falha ao iniciar a leitura, reinicie o leitor se o problema persistir!</string>
+    <string name="fail">Falha</string>
+    <string name="attention">Atenção</string>
+    <string name="ok">Ok</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="fail_connection_bluetooth">Falha na conexão, verifique o dispositivo Bluetooth!</string>
+    <string name="bluetoooth_disable_finish_connection">Bluetooth desabilitado, a conexão será finalizada!</string>
+    <string name="connection_leitor_fail">Conexão com o leitor perdida, verifique a conexão!</string>
+    <string name="logout_confirmation">Deseja realmente sair do usuário atual?</string>
+    <string name="add_class">Incluir Classe</string>
+    <string name="confirm">Confirmar</string>
+    <string name="date">Data</string>
+    <string name="name">Nome</string>
+    <string name="check_name">Obrigatório preencher o campo Nome!</string>
+    <string name="check_username">Obrigatório preencher o campo Usuário!</string>
+    <string name="check_password">Obrigatório preencher o campo Senha!</string>
+    <string name="config">Configurações</string>
+    <string name="save">Salvar</string>
+    <string name="add">Adicionar</string>
+    <string name="ip">IP</string>
+    <string name="porta">Porta</string>
+    <string name="sucess_save_config">Configurações salvas com sucesso!</string>
+    <string name="sucess">Sucesso!</string>
+    <string name="sucess_insert">Registro incluído com sucesso!</string>
+    <string name="sucess_update">Registro atualizado com sucesso!</string>
+    <string name="sucess_delete">Registro excluido com sucesso!</string>
+    <string name="fail_insert">Falha ao incluir registro!</string>
+    <string name="fail_update">Falha ao atualizar registro!</string>
+    <string name="fail_delete">Falha ao excluir registro!</string>
+    <string name="no_row_data">Nenhum registro encontrado!</string>
+    <string name="wait">Aguarde!</string>
+    <string name="load_data_from_database">Carregando dados da base!</string>
+    <string name="delete_onlongitem_pressed">Deseja excluir o registro pressionado?</string>
+    <string name="username">Usuário</string>
+    <string name="password">Senha</string>
+    <string name="login">Login</string>
+    <string name="info_webservice_not_found">Informações de WebService não cadastradas. Acesse as configurações no canto superior direito e cadastre para fazer o Login!</string>
+    <string name="welcome">Bem vindo(a)</string>
+    <string name="fail_the_comunication_with_web_service">Falha ao comunicar com o WebService!</string>
+    <string name="sucess_data_transmition">Dados Transmitidos com Sucesso!</string>
+    <string name="delete_tag_selected">Deseja deletar da leitura a Tag pressionada?</string>
+    <string name="no_shared_list_isEmpty">Não é possivel transmitir uma lista vazia!</string>
+    <string name="no_row_data_for_pecaclas">Nenhuma classe encontrada, selecione ou faça o cadastro para realizar a Leitura!</string>
+
+    <string name="app_name">Coletor Gado</string>
+    <string name="settings_name">Configurações</string>
+    <string name="settings_nameEN">Settings</string>
+    <string name="btle_name">Bluetooth</string>
+    <string name="config_name">Sobre</string>
+    <string name="profile_name">Perfil</string>
+    <string name="config_nameEN">About</string>
+    <string name="sair">Sair</string>
+    <string name="sairEN">Exit</string>
+    <string name="spinner_title">Escolha...</string>
+
+    <string-array name="titles_tab">
+        <item>RF</item>
+        <item>Banco de Dados</item>
+        <item>Web Service</item>
+        <item>Regras de Acesso</item>
+    </string-array>
+
+    <string-array name="titles_tab_english">
+        <item>RF</item>
+        <item>Database</item>
+        <item>Web Service</item>
+        <item>Access Rules</item>
+    </string-array>
+    //------ComboBox Seção Rádio Frequência------*/
+    <string-array name="rfbanda">
+        <item>BR1 | 902.0Mhz - 907.0Mhz</item>
+        <item>BR2 | 915.5Mhz - 928.0Mhz</item>
+    </string-array>
+
+    <string-array name="rfpotencia">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+    //-------------------------------------------*/
+
+    //------ComboBox Seção Rádio Frequência------*/
+    <string-array name="bdbanco">
+        <item>SQL Server</item>
+        <item>MySQL</item>
+    </string-array>
+    //-------------------------------------------*/
+
+    <string name="CONFIG_UUID">00002902-0000-1000-8000-00805f9b34fb"</string>
+    <string name="title_activity_produtos">ProdutosActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="download_csv">Download Leituras em CSV</string>
+    <string name="download_csv_en">Download CSV</string>
+
+</resources>

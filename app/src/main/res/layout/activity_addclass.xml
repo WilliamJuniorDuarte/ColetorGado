@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_addclass"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary" />
+
+    <View
+        android:id="@+id/toolbar_shadow_addclass"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/toolbar_addclass"
+        android:background="@drawable/toolbar_dropshadow" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_below="@+id/toolbar_shadow_addclass">
+
+    <LinearLayout
+        android:id="@+id/ll_01_addclass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ib_date_addclass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_calendar_month_24"
+            android:backgroundTint="@color/md_white_1000"/>
+
+        <EditText
+            android:id="@+id/et_date_addclass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="@string/date"
+            android:textColor="@color/md_black_1000"
+            android:enabled="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_02_addclass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_01_addclass"
+        android:layout_marginTop="10dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_name_addclass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/actext_name_addclass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_addclass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_02_addclass"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btn_confirm_addclass"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/confirm"
+        android:textAlignment="center"
+        android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

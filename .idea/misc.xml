@@ -1,0 +1,126 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_choice.xml" value="0.2677083333333333" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_conferir.xml" value="0.2677083333333333" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_configuracao.xml" value="0.1015625" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_inicial.xml" value="0.14130434782608695" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_inventario.xml" value="0.28072916666666664" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_leitura.xml" value="0.25" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_list_btle.xml" value="0.14130434782608695" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_pesquisa.xml" value="0.33" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_product_detail.xml" value="0.14130434782608695" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_produtos.xml" value="0.14130434782608695" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_services_btle.xml" value="0.14130434782608695" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_transferir.xml" value="0.26979166666666665" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/column_list.xml" value="0.2015625" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/column_list_traduzir.xml" value="0.2015625" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/device_btle.xml" value="0.14130434782608695" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/footer_layout.xml" value="0.28072916666666664" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/fragment_a.xml" value="0.358695652173913" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/fragment_b.xml" value="0.358695652173913" />
+        <entry key="..\:/OneDrive/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/layout_dialog.xml" value="0.26979166666666665" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/drawable/spinner_bg.xml" value="0.3880208333333333" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/drawable/spinner_sla.xml" value="0.3880208333333333" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_conferir.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_configuracao.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_despacho.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_inicial.xml" value="0.21666666666666667" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_inventario.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_leitura.xml" value="0.20885416666666667" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_list_btle.xml" value="0.18802083333333333" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_pesquisa.xml" value="0.24010416666666667" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_product_detail.xml" value="0.20520833333333333" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_produtos.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_services_btle.xml" value="0.18802083333333333" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_sobre.xml" value="0.20520833333333333" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/activity_transferir.xml" value="0.246875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/column_list.xml" value="0.28958333333333336" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/column_list_despacho.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/column_list_traduzir.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/column_list_transferir.xml" value="0.240625" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/fragment_a.xml" value="0.67" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/fragment_b.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/layout/list_produtos.xml" value="0.371875" />
+        <entry key="..\:/Projetos/App Bluetooth MIDH2/ViaOnda_Mobile/app/src/main/res/xml/network_security_config.xml" value="0.20885416666666667" />
+        <entry key="..\:/Projetos/ViaOnda_Mobile/app/src/main/res/layout/activity_list_btle.xml" value="0.371875" />
+        <entry key="..\:/Projetos/ViaOnda_Mobile/app/src/main/res/layout/activity_product_detail.xml" value="0.371875" />
+        <entry key="..\:/Projetos/ViaOnda_Mobile/app/src/main/res/layout/activity_sobre.xml" value="0.371875" />
+        <entry key="..\:/Projetos/ViaOnda_Mobile/app/src/main/res/layout/device_btle.xml" value="0.371875" />
+        <entry key="..\:/Projetos/ViaOnda_Mobile/app/src/main/res/layout/fragment_a.xml" value="0.371875" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/activity_conferir.xml" value="0.2604166666666667" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/activity_gravar.xml" value="0.35572916666666665" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/activity_inicial.xml" value="0.35572916666666665" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/activity_leitura.xml" value="0.35572916666666665" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/activity_product_detail.xml" value="0.35572916666666665" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/activity_produtos.xml" value="0.33" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/column_list.xml" value="0.2558876811594203" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/content_produtos.xml" value="0.19322916666666667" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/fragment_a.xml" value="0.33" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/fragment_b.xml" value="0.33" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/layout_dialog.xml" value="0.19322916666666667" />
+        <entry key="..\:/_documentos/_desenv/Android Projects/ViaOnda_Mobile/app/src/main/res/layout/list_produtos.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../DOc" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
+    <option name="OPTION_INCLUDE_LIBS" value="true" />
+  </component>
+  <component name="NullableNotNullManager">
+    <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
+    <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
+    <option name="myNullables">
+      <value>
+        <list size="15">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.Nullable" />
+          <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nullable" />
+          <item index="2" class="java.lang.String" itemvalue="javax.annotation.CheckForNull" />
+          <item index="3" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.Nullable" />
+          <item index="4" class="java.lang.String" itemvalue="android.support.annotation.Nullable" />
+          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.Nullable" />
+          <item index="6" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNullable" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.Nullable" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableDecl" />
+          <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableType" />
+          <item index="10" class="java.lang.String" itemvalue="android.annotation.Nullable" />
+          <item index="11" class="java.lang.String" itemvalue="com.android.annotations.Nullable" />
+          <item index="12" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.Nullable" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.annotations.Nullable" />
+          <item index="14" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.Nullable" />
+        </list>
+      </value>
+    </option>
+    <option name="myNotNulls">
+      <value>
+        <list size="15">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.NotNull" />
+          <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nonnull" />
+          <item index="2" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.NonNull" />
+          <item index="3" class="java.lang.String" itemvalue="android.support.annotation.NonNull" />
+          <item index="4" class="java.lang.String" itemvalue="androidx.annotation.NonNull" />
+          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNonNull" />
+          <item index="6" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.NonNull" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullDecl" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullType" />
+          <item index="9" class="java.lang.String" itemvalue="android.annotation.NonNull" />
+          <item index="10" class="java.lang.String" itemvalue="com.android.annotations.NonNull" />
+          <item index="11" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.NonNull" />
+          <item index="12" class="java.lang.String" itemvalue="io.reactivex.annotations.NonNull" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.NonNull" />
+          <item index="14" class="java.lang.String" itemvalue="lombok.NonNull" />
+        </list>
+      </value>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

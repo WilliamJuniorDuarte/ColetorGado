@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 31
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'mips', 'mips64', 'arm64-v8a'
+            universalApk false
+        }
+    }
+
+    defaultConfig {
+        applicationId "br.com.jd"
+        minSdkVersion 24
+        targetSdkVersion 31    //Versão padrão para o aplicativo
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion = '31.0.0'
+    ndkVersion '23.1.7779620'
+    namespace 'br.com.wjd'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.4.1'
+    implementation 'androidx.navigation:navigation-ui:2.4.1'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'androidx.test:monitor:1.5.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
+    implementation 'com.github.anastr:speedviewlib:1.6.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.koushikdutta.ion:ion:3.1.0'
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation files('libs/ViaOndaJavaClass.jar')
+    implementation files('libs/uhf_r_v1.0.jar')
+    implementation('com.mikepenz:materialdrawer:6.1.2@aar') {
+        transitive = true
+    }
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.mikepenz:iconics-core:5.3.3'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.mikepenz:iconics-views:5.3.3'
+    implementation 'com.mikepenz:google-material-typeface:3.0.1.3.original@aar'
+    implementation 'com.github.warkiz.tickseekbar:tickseekbar:0.1.4'
+    implementation "androidx.annotation:annotation:1.3.0"
+    implementation 'com.codepath.libraries:asynchttpclient:2.2.0'
+}

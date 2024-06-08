@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <LinearLayout
+        android:id="@+id/ll01_itemEnviar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/ck_select_listPecaTipo"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"/>
+        <View
+            android:id="@+id/vw_color_listPecaTipo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/et_sigl_listPecaTip"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:text="TextView"/>
+
+        <TextView
+            android:id="@+id/et_name_listPecaTip"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="TextView"/>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
