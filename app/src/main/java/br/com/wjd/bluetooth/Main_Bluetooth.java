@@ -53,6 +53,7 @@ public class Main_Bluetooth extends AppCompatActivity implements AdapterView.OnI
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeAsUpIndicator(R.drawable.baseline_arrow_white_24);
         ab.setTitle(getString(R.string.connection_bluetooth));
 
         //Verifica se o dispositivo atual suporta o Bluetooth BLE

@@ -1,0 +1,10 @@
+<resources>
+
+    <color name="primaryColor">#8b2500</color>
+    <color name="secondColor">#a03704</color>
+    <color name="tertiaryColor">#b54809</color>
+    <color name="quaternaryColor">#ca5a0d</color>
+    <color name="quintenaryColor">#df6b11</color>
+    <color name="backgroundColor">#E5E6E6</color>
+
+</resources>

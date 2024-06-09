@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
 
     <LinearLayout
         android:id="@+id/ll01_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:gravity="end">
+        android:gravity="end"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/bt_settings_login"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/baseline_settings_24"
-            android:backgroundTint="@color/md_white_1000"
-            android:paddingEnd="20dp" />
+            android:background="@android:color/transparent"
+            android:paddingEnd="20dp"
+            android:src="@drawable/baseline_settings_24" />
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginVertical="20dp"
+        android:layout_below="@+id/ll01_login"
         android:layout_marginHorizontal="15dp"
-        android:gravity="center"
-        android:layout_below="@+id/ll01_login">
+        android:layout_marginVertical="20dp"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/tv01"
@@ -35,7 +36,7 @@
             android:text="@string/login"
             android:textAlignment="center"
             android:textSize="30sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ti_username_login"
@@ -49,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/username"
-                android:maxLines="1"/>
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -59,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ti_username_login"
             android:layout_marginTop="10dp">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
@@ -71,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:maxLines="1"/>
+                    android:maxLines="1" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -79,21 +81,20 @@
             <ImageButton
                 android:id="@+id/iv_visiblepassword_login"
                 android:layout_width="0dip"
-                android:layout_weight="10"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="10"
                 android:src="@drawable/baseline_visibility_off_24"
-                android:backgroundTint="@color/md_white_1000"
-                android:layout_gravity="center"/>
+                android:background="@android:color/transparent"/>
 
         </LinearLayout>
 
         <Button
             android:id="@+id/bt_confirm_login"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            style="@style/CustomButton"
             android:layout_below="@id/ti_password_login"
-            android:text="@string/confirm"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:text="@string/confirm" />
     </RelativeLayout>
 
 </RelativeLayout>

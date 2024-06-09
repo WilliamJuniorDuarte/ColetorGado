@@ -3,6 +3,8 @@ package br.com.wjd.fragments;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -22,14 +24,13 @@ import br.com.wjd.bluetooth.Main_Bluetooth;
 
 public class Inicial extends AppCompatActivity {
 
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_inicial);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_inicial);
         toolbar.setTitle(getString(R.string.menu_starting));
         setSupportActionBar(toolbar);
 
@@ -76,6 +77,16 @@ public class Inicial extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // Set the color of overflow icon (three dots) to white
+        Drawable overflowIcon = toolbar.getOverflowIcon();
+        if (overflowIcon != null) {
+            overflowIcon.setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_ATOP);
+        }
+        return super.onPrepareOptionsMenu(menu);
     }
 
     @Override

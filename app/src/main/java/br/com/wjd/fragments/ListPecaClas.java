@@ -37,7 +37,6 @@ public class ListPecaClas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_pecaclas);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_listPecaClas);
         toolbar.setTitle(getResources().getString(R.string.btclass));
@@ -45,6 +44,7 @@ public class ListPecaClas extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeAsUpIndicator(R.drawable.baseline_arrow_white_24);
 
         dac = new DAC(ListPecaClas.this);
         dao = new PecaClasDao(dac);

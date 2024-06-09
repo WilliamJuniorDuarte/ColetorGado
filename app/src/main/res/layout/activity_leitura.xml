@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true"
     android:id="@+id/act_leitura"
-    tools:context="br.com.wjd.fragments.Leitura">
+    tools:context="br.com.wjd.fragments.Leitura"
+    android:background="@color/backgroundColor">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="16dp" />
+        style="@style/CustomToolbar"/>
 
     <View
         android:id="@+id/toolbar_shadow"

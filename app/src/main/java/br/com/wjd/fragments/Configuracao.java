@@ -2,6 +2,8 @@ package br.com.wjd.fragments;
 
 import android.app.ActivityManager;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.core.app.NavUtils;
@@ -30,6 +32,7 @@ public class Configuracao extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeAsUpIndicator(R.drawable.baseline_arrow_white_24);
         ab.setTitle(getString(R.string.config));
 
         //SharedPreferences

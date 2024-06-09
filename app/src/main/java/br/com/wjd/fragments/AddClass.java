@@ -66,7 +66,6 @@ public class AddClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addclass);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         spViaOnda = this.getSharedPreferences("wjdPreferences", MODE_PRIVATE);
 
@@ -76,6 +75,7 @@ public class AddClass extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeAsUpIndicator(R.drawable.baseline_arrow_white_24);
 
         et_data = findViewById(R.id.et_date_addclass);
         btn_date = findViewById(R.id.ib_date_addclass);

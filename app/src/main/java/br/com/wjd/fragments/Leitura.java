@@ -176,14 +176,13 @@ public class Leitura extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leitura);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getString(R.string.leitura));
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setHomeAsUpIndicator(R.drawable.baseline_arrow_white_24);
 
         //SharedPreferences
         spViaOnda = this.getSharedPreferences("wjdPreferences", MODE_PRIVATE);
