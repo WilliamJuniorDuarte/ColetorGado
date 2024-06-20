@@ -32,6 +32,7 @@
             android:id="@+id/ib_date_addclass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:src="@drawable/baseline_calendar_month_24"
             android:background="@android:color/transparent"/>
 
@@ -42,7 +43,7 @@
             android:ems="10"
             android:inputType="date"
             android:hint="@string/date"
-            android:textColor="@color/md_black_1000"
+            android:textColor="@color/black"
             android:enabled="false"/>
     </LinearLayout>
 

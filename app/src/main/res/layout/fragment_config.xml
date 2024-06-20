@@ -67,6 +67,7 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:text="Potência:"
+            android:textColor="@color/black"
             />
 
         <com.warkiz.tickseekbar.TickSeekBar
@@ -79,11 +80,11 @@
             app:tsb_track_background_size="5dp"
             app:tsb_track_progress_size="5dp"
             app:tsb_tick_texts_size="16dp"
-            app:tsb_progress="100"
+            app:tsb_progress="20"
             app:tsb_show_thumb_text="above"
-            app:tsb_thumb_color="@color/md_black_1000"
-            app:tsb_thumb_text_color="@color/md_black_1000"
-            app:tsb_track_progress_color="@color/md_black_1000"
+            app:tsb_thumb_color="@color/primaryColor"
+            app:tsb_thumb_text_color="@color/black"
+            app:tsb_track_progress_color="@color/primaryColor"
             />
 
     </LinearLayout>

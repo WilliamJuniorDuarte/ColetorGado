@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <!-- Define apenas a borda -->
     <stroke
         android:width="2dp"
-        android:color="#000000" /> <!-- Substitua #000000 pela cor da borda desejada -->
-
-    <!-- Define o raio dos cantos da borda, se desejado -->
-    <corners android:radius="4dp" /> <!-- Opcional: Ajuste o raio dos cantos da borda -->
+        android:color="#000000" />
+    <corners android:radius="4dp" />
 </shape>

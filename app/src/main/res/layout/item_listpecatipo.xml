@@ -15,7 +15,8 @@
             android:id="@+id/ck_select_listPecaTipo"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_weight="8"/>
+            android:layout_weight="8"
+            />
         <View
             android:id="@+id/vw_color_listPecaTipo"
             android:layout_width="20dp"
@@ -27,14 +28,16 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="10"
-            android:text="TextView"/>
+            android:text="TextView"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/et_name_listPecaTip"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="60"
-            android:text="TextView"/>
+            android:text="TextView"
+            android:textColor="@color/black"/>
 
 
     </LinearLayout>
