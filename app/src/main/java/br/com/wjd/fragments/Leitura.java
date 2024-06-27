@@ -51,6 +51,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import br.com.wjd.Classes.AlertDialogCustom;
 import br.com.wjd.Classes.LeituraRecebida;
 import br.com.wjd.Classes.PecaClas;
 import br.com.wjd.Classes.PecaTipo;
@@ -219,25 +220,27 @@ public class Leitura extends AppCompatActivity {
                     //Se ocorrer algum problema na conexão com o service do bluetooth vamos finalizar a activity
                     if (!bLeituraHid) {
                         if (!mBTLE_Service.connect(address)) {
-                            new AlertDialog.Builder(Leitura.this).setTitle(R.string.fail).
-                                    setMessage(R.string.fail_connection_bluetooth)
-                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-
-                                            //Finaliza a ação do botão do leitor RFID
-                                            if (botao_rfid == true) {
-                                                unregisterReceiver(keyReceiver);
-                                                botao_rfid = false;
-                                            }
-
-                                            threadConnection = false;
-                                            Intent intent = new Intent(Leitura.this, Main_Bluetooth.class);
-                                            startActivity(intent);
-                                            finish();
+                            AlertDialogCustom.showDialog(
+                                Leitura.this,
+                                getString(R.string.fail),
+                                getString(R.string.fail_connection_bluetooth),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //Finaliza a ação do botão do leitor RFID
+                                        if (botao_rfid == true) {
+                                            unregisterReceiver(keyReceiver);
+                                            botao_rfid = false;
                                         }
-                                    })
-                                    .show();
+
+                                        threadConnection = false;
+                                        Intent intent = new Intent(Leitura.this, Main_Bluetooth.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                },
+                                null
+                            );
                         }
                     }
 
@@ -293,15 +296,19 @@ public class Leitura extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         finalizar();
-                                        new AlertDialog.Builder(Leitura.this)
-                                                .setTitle(R.string.fail)
-                                                .setMessage(R.string.connection_leitor_fail)
-                                                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                                    }
-                                                })
-                                                .show();
+
+                                        AlertDialogCustom.showDialog(
+                                            Leitura.this,
+                                            getString(R.string.fail),
+                                            getString(R.string.connection_leitor_fail),
+                                            new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+
+                                                }
+                                            },
+                                            null
+                                        );
                                     }
                                 });
                             }
@@ -311,24 +318,25 @@ public class Leitura extends AppCompatActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        new AlertDialog.Builder(Leitura.this)
-                                                .setTitle(R.string.bluetooth)
-                                                .setMessage(R.string.bluetoooth_disable_finish_connection)
-                                                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(DialogInterface dialog, int which) {
-
-                                                        //Finaliza a ação do botão do leitor RFID
-                                                        if (botao_rfid == true) {
-                                                            unregisterReceiver(keyReceiver);
-                                                            botao_rfid = false;
-                                                        }
-
-                                                        threadConnection = false;
-                                                        finish();
+                                        AlertDialogCustom.showDialog(
+                                            Leitura.this,
+                                            getString(R.string.bluetooth),
+                                            getString(R.string.bluetoooth_disable_finish_connection),
+                                            new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    //Finaliza a ação do botão do leitor RFID
+                                                    if (botao_rfid == true) {
+                                                        unregisterReceiver(keyReceiver);
+                                                        botao_rfid = false;
                                                     }
-                                                })
-                                                .show();
+
+                                                    threadConnection = false;
+                                                    finish();
+                                                }
+                                            },
+                                            null
+                                        );
                                     }
                                 });
 
@@ -340,25 +348,27 @@ public class Leitura extends AppCompatActivity {
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
-                                                new AlertDialog.Builder(Leitura.this).setTitle(R.string.fail).
-                                                        setMessage(R.string.fail_connection_bluetooth)
-                                                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                                            @Override
-                                                            public void onClick(DialogInterface dialog, int which) {
-
-                                                                //Finaliza a ação do botão do leitor RFID
-                                                                if (botao_rfid == true) {
-                                                                    unregisterReceiver(keyReceiver);
-                                                                    botao_rfid = false;
-                                                                }
-
-                                                                threadConnection = false;
-                                                                Intent intent = new Intent(Leitura.this, Main_Bluetooth.class);
-                                                                startActivity(intent);
-                                                                finish();
+                                                AlertDialogCustom.showDialog(
+                                                    Leitura.this,
+                                                    getString(R.string.fail),
+                                                    getString(R.string.fail_connection_bluetooth),
+                                                    new DialogInterface.OnClickListener() {
+                                                        @Override
+                                                        public void onClick(DialogInterface dialog, int which) {
+                                                            //Finaliza a ação do botão do leitor RFID
+                                                            if (botao_rfid == true) {
+                                                                unregisterReceiver(keyReceiver);
+                                                                botao_rfid = false;
                                                             }
-                                                        })
-                                                        .show();
+
+                                                            threadConnection = false;
+                                                            Intent intent = new Intent(Leitura.this, Main_Bluetooth.class);
+                                                            startActivity(intent);
+                                                            finish();
+                                                        }
+                                                    },
+                                                    null
+                                                );
                                             }
                                         });
                                     }
@@ -434,15 +444,18 @@ public class Leitura extends AppCompatActivity {
                     }
                     getPecaChip();
                 } else {
-                    new AlertDialog.Builder(Leitura.this)
-                            .setTitle(R.string.fail)
-                            .setMessage(R.string.no_row_data_for_pecaclas)
-                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                }
-                            })
-                            .show();
+                    AlertDialogCustom.showDialog(
+                        Leitura.this,
+                        getString(R.string.fail),
+                        getString(R.string.no_row_data_for_pecaclas),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        },
+                        null
+                    );
                 }
 
 
@@ -464,16 +477,18 @@ public class Leitura extends AppCompatActivity {
                         btle_start = true;
 
                     if (btle_start == false) {
-                        new AlertDialog.Builder(Leitura.this)
-                                .setTitle(R.string.fail)
-                                .setMessage(R.string.fail_initialized_reading)
-                                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
+                        AlertDialogCustom.showDialog(
+                            Leitura.this,
+                            getString(R.string.fail),
+                            getString(R.string.fail_initialized_reading),
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
 
-                                    }
-                                })
-                                .show();
+                                }
+                            },
+                            null
+                        );
                     } else {
 
                         //Seta a variavel para inflar nosso layout correto
@@ -529,15 +544,18 @@ public class Leitura extends AppCompatActivity {
                             newTag.setVisibility(View.VISIBLE);
                             addTag.setVisibility(View.VISIBLE);
                         } else {
-                            new AlertDialog.Builder(Leitura.this)
-                                    .setTitle(R.string.fail)
-                                    .setMessage(R.string.fail_initialized_reading)
-                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            AlertDialogCustom.showDialog(
+                                    Leitura.this,
+                                    getString(R.string.fail),
+                                    getString(R.string.fail_initialized_reading),
+                                    new DialogInterface.OnClickListener() {
                                         @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                        public void onClick(DialogInterface dialog, int which) {
+
                                         }
-                                    })
-                                    .show();
+                                    },
+                                    null
+                            );
                         }
                     }
                 }
@@ -573,48 +591,54 @@ public class Leitura extends AppCompatActivity {
             public void onClick(View view) {
                 finalizar();
                 if (listaLeituras.isEmpty()){
-                    new AlertDialog.Builder(Leitura.this)
-                            .setTitle(R.string.fail)
-                            .setMessage(R.string.no_shared_list_isEmpty)
-                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    AlertDialogCustom.showDialog(
+                            Leitura.this,
+                            getString(R.string.fail),
+                            getString(R.string.no_shared_list_isEmpty),
+                            new DialogInterface.OnClickListener() {
                                 @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
+                                public void onClick(DialogInterface dialog, int which) {
+
                                 }
-                            })
-                            .show();
+                            },
+                            null
+                    );
                 } else {
                     int erro = 0;
 
                     if (selectedPecaClas.getCodigene() > 0){
                         if (sendMovPecaClas()) {
-                            new AlertDialog.Builder(Leitura.this)
-                                    .setTitle(R.string.sucess)
-                                    .setMessage(R.string.sucess_data_transmition)
-                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            AlertDialogCustom.showDialog(
+                                    Leitura.this,
+                                    getString(R.string.sucess),
+                                    getString(R.string.sucess_data_transmition),
+                                    new DialogInterface.OnClickListener() {
                                         @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                        public void onClick(DialogInterface dialog, int which) {
                                             limpaTag();
                                             sp_classe.setEnabled(true);
                                         }
-                                    })
-                                    .show();
+                                    },
+                                    null
+                            );
                         } else {
                             erro++;
                         }
                     } else if (sendPecaClas()) {
                         if (sendMovPecaClas()) {
-
-                            new AlertDialog.Builder(Leitura.this)
-                                    .setTitle(R.string.sucess)
-                                    .setMessage(R.string.sucess_data_transmition)
-                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            AlertDialogCustom.showDialog(
+                                    Leitura.this,
+                                    getString(R.string.sucess),
+                                    getString(R.string.sucess_data_transmition),
+                                    new DialogInterface.OnClickListener() {
                                         @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                        public void onClick(DialogInterface dialog, int which) {
                                             limpaTag();
                                             sp_classe.setEnabled(true);
                                         }
-                                    })
-                                    .show();
+                                    },
+                                    null
+                            );
                         } else {
                             erro++;
                         }
@@ -624,15 +648,18 @@ public class Leitura extends AppCompatActivity {
 
 
                     if (erro > 0) {
-                        new AlertDialog.Builder(Leitura.this)
-                                .setTitle(R.string.fail)
-                                .setMessage(R.string.fail_the_comunication_with_web_service)
-                                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        AlertDialogCustom.showDialog(
+                                Leitura.this,
+                                getString(R.string.fail),
+                                getString(R.string.fail_the_comunication_with_web_service),
+                                new DialogInterface.OnClickListener() {
                                     @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                    public void onClick(DialogInterface dialog, int which) {
+
                                     }
-                                })
-                                .show();
+                                },
+                                null
+                        );
                     }
                 }
             }
@@ -1035,10 +1062,11 @@ public class Leitura extends AppCompatActivity {
                 public boolean onLongClick(View view) {
                     String selectedTag = iv.txtTags.getText().toString();
 
-                    new AlertDialog.Builder(mContext)
-                            .setTitle(R.string.attention)
-                            .setMessage(mContext.getString(R.string.delete_tag_selected)+"("+selectedTag+")")
-                            .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    AlertDialogCustom.showDialog(
+                            Leitura.this,
+                            getString(R.string.attention),
+                            getString(R.string.delete_tag_selected),
+                            new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     listaLeituras.remove(position);
@@ -1048,14 +1076,13 @@ public class Leitura extends AppCompatActivity {
                                     adapterTags.notifyDataSetChanged();
                                     total.setText(String.valueOf(adapterTags.getCount()));
                                 }
-                            })
-                            .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                            },
+                            new DialogInterface.OnClickListener() {
                                 @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
+                                public void onClick(DialogInterface dialog, int which) {
                                 }
-                            })
-                            .show();
-
+                            }
+                    );
                     return true;
                 }
             });

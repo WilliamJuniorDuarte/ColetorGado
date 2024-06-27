@@ -12,6 +12,8 @@ import android.os.IBinder;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import br.com.wjd.Classes.AlertDialogCustom;
+import br.com.wjd.fragments.AddClass;
 import br.com.wjd.fragments.Inicial;
 import br.com.wjd.fragments.Leitura;
 import br.com.wjd.R;
@@ -84,14 +86,13 @@ public class Comunicacao_Service_Bluetooth extends AppCompatActivity {
     public void updateServices() {
 
         progressDialog.dismiss();
-
-        new AlertDialog.Builder(Comunicacao_Service_Bluetooth.this)
-                .setTitle(R.string.bluetooth)
-                .setMessage(R.string.bluetooth_connected)
-                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+        AlertDialogCustom.showDialog(
+                Comunicacao_Service_Bluetooth.this,
+                getString(R.string.bluetooth),
+                getString(R.string.bluetooth_connected),
+                new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                         //Armazena no sharedpreferences o nome e o endereço mac do bluetooth conectado pelo usuário
                         ed.putString("blename", name);
                         ed.putString("bleaddress", address);
@@ -100,26 +101,30 @@ public class Comunicacao_Service_Bluetooth extends AppCompatActivity {
                         finish();
                         startActivity(new Intent(Comunicacao_Service_Bluetooth.this, Inicial.class));
                     }
-                })
-                .show();
+                },
+                null
+        );
     }
 
     public void failServices() {
 
         progressDialog.dismiss();
 
-        new AlertDialog.Builder(Comunicacao_Service_Bluetooth.this).setTitle(R.string.fail).
-                setMessage(R.string.bluetooth_fail_connection)
-                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+        AlertDialogCustom.showDialog(
+            Comunicacao_Service_Bluetooth.this,
+            getString(R.string.fail),
+            getString(R.string.bluetooth_fail_connection),
+            new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
-                        finish();
+                    finish();
 
-                        startActivity(new Intent(Comunicacao_Service_Bluetooth.this, Leitura.class));
-                    }
-                })
-                .show();
+                    startActivity(new Intent(Comunicacao_Service_Bluetooth.this, Leitura.class));
+                }
+            },
+            null
+        );
     }
 
     @Override

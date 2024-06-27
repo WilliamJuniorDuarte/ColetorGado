@@ -3,6 +3,7 @@ package br.com.wjd.fragments;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,7 +19,9 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.textfield.TextInputEditText;
 import com.warkiz.tickseekbar.TickSeekBar;
 
+import br.com.wjd.Classes.AlertDialogCustom;
 import br.com.wjd.R;
+import br.com.wjd.bluetooth.Main_Bluetooth;
 
 public class Config extends Fragment {
 
@@ -53,16 +56,18 @@ public class Config extends Fragment {
                 ed.putInt("rfpotencia", (int)potencia.getProgress());
                 ed.apply();
 
-                new AlertDialog.Builder(v.getContext())
-                        .setTitle(v.getResources().getString(R.string.sucess))
-                        .setMessage(v.getResources().getString(R.string.sucess_save_config))
-                        .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                getActivity().finish();
-                            }
-                        })
-                        .show();
+                AlertDialogCustom.showDialog(
+                    v.getContext(),
+                    getString(R.string.sucess),
+                    getString(R.string.sucess_save_config),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            getActivity().finish();
+                        }
+                    },
+                    null
+                );
             }
         });
         return v;

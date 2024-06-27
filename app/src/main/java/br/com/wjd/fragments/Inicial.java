@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import br.com.wjd.Classes.AlertDialogCustom;
 import br.com.wjd.R;
 import br.com.wjd.bluetooth.Main_Bluetooth;
 
@@ -97,22 +98,22 @@ public class Inicial extends AppCompatActivity {
             case R.id.about:
                 return true;
             case R.id.logout:
-                new AlertDialog.Builder(Inicial.this)
-                        .setTitle(R.string.attention)
-                        .setMessage(R.string.logout_confirmation)
-                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                AlertDialogCustom.showDialog(
+                        Inicial.this,
+                        getString(R.string.attention),
+                        getString(R.string.logout_confirmation),
+                        new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
+                            public void onClick(DialogInterface dialog, int which) {
                                 logout();
                             }
-                        })
-                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                        },
+                        new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
+                            public void onClick(DialogInterface dialog, int which) {
                             }
-                        })
-                        .show();
-
+                        }
+                );
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

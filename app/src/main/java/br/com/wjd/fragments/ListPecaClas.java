@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.com.wjd.Classes.AlertDialogCustom;
 import br.com.wjd.Classes.PecaClas;
 import br.com.wjd.R;
 import br.com.wjd.adapters.ItemPecaClasAdapter;
@@ -56,55 +57,64 @@ public class ListPecaClas extends AppCompatActivity {
         loadRecyclerView();
 
         rv.addOnItemTouchListener(new RecyclerItemClickListener(ListPecaClas.this, rv, new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        if (listPecaclas.get(position).getCodiclas() > 0) {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("codiclas", listPecaclas.get(position).getCodiclas());
-                            Intent intent = new Intent(ListPecaClas.this, AddClass.class);
-                            intent.putExtras(bundle);
-                            startActivity(intent);
+            @Override
+            public void onItemClick(View view, int position) {
+                if (listPecaclas.get(position).getCodiclas() > 0) {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("codiclas", listPecaclas.get(position).getCodiclas());
+                    Intent intent = new Intent(ListPecaClas.this, AddClass.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+                AlertDialogCustom.showDialog(
+                    ListPecaClas.this,
+                    getString(R.string.attention),
+                    getString(R.string.delete_onlongitem_pressed),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (dao.deletePecaClas(listPecaclas.get(position).getCodiclas())){
+                                loadRecyclerView();
+
+                                AlertDialogCustom.showDialog(
+                                    ListPecaClas.this,
+                                    getString(R.string.sucess),
+                                    getString(R.string.sucess_delete),
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                        }
+                                    },
+                                    null
+                                );
+                            } else {
+                                AlertDialogCustom.showDialog(
+                                    ListPecaClas.this,
+                                    getString(R.string.fail),
+                                    getString(R.string.fail_delete),
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                        }
+                                    },
+                                    null
+                                );
+                            }
+                        }
+                    },
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
                         }
                     }
-
-                    @Override
-                    public void onLongItemClick(View view, int position) {
-                        new AlertDialog.Builder(ListPecaClas.this).setTitle(R.string.attention).
-                                setMessage(R.string.delete_onlongitem_pressed)
-                                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        if (dao.deletePecaClas(listPecaclas.get(position).getCodiclas())){
-                                            loadRecyclerView();
-                                            new AlertDialog.Builder(ListPecaClas.this).setTitle(R.string.sucess).
-                                                    setMessage(R.string.sucess_delete)
-                                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                                        @Override
-                                                        public void onClick(DialogInterface dialog, int which) {
-
-                                                        }
-                                                    })
-                                                    .show();
-                                        } else {
-                                            new AlertDialog.Builder(ListPecaClas.this).setTitle(R.string.fail).
-                                                    setMessage(R.string.fail_delete)
-                                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                                        @Override
-                                                        public void onClick(DialogInterface dialog, int which) {
-                                                        }
-                                                    })
-                                                    .show();
-                                        }
-                                    }
-                                })
-                                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                    }
-                                })
-                                .show();
-                    }
-                }));
+                );
+            }
+        }));
 
         btn_add = findViewById(R.id.btn_add_listpecaclas);
         btn_add.setOnClickListener(new View.OnClickListener() {

@@ -36,7 +36,8 @@
             android:text="@string/login"
             android:textAlignment="center"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ti_username_login"
@@ -50,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/username"
-                android:maxLines="1" />
+                android:maxLines="1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 

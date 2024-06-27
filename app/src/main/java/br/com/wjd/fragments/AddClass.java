@@ -3,6 +3,7 @@ package br.com.wjd.fragments;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import br.com.wjd.Classes.AlertDialogCustom;
 import br.com.wjd.Classes.PecaClas;
 import br.com.wjd.Classes.PecaTipo;
 import br.com.wjd.Classes.ServiceFunction;
@@ -43,6 +45,7 @@ import br.com.wjd.adapters.RecyclerViewSeparator;
 import br.com.wjd.bd.DAC;
 import br.com.wjd.bd.PecaClasDao;
 import br.com.wjd.bd.PecaTipoDao;
+import br.com.wjd.bluetooth.Comunicacao_Service_Bluetooth;
 
 public class AddClass extends AppCompatActivity {
 
@@ -94,14 +97,17 @@ public class AddClass extends AppCompatActivity {
                 if (valida()){
                     savePecaClas();
                 } else {
-                    new AlertDialog.Builder(AddClass.this).setTitle(R.string.fail).
-                            setMessage(message)
-                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                }
-                            })
-                            .show();
+                    AlertDialogCustom.showDialog(
+                        AddClass.this,
+                        getString(R.string.fail),
+                        message,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        },
+                        null
+                    );
                 }
             }
         });
@@ -129,47 +135,57 @@ public class AddClass extends AppCompatActivity {
         pecaClas.setCodistri(adapter.getcodigo(listPecaTipo).toString().replace("[", "").replace("]",""));
         if (codiclas > 0) {
             if (dao.updatePecaClas(pecaClas)) {
-                new AlertDialog.Builder(AddClass.this).setTitle(R.string.sucess).
-                        setMessage(R.string.sucess_update)
-                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                AlertDialogCustom.showDialog(
+                        AddClass.this,
+                        getString(R.string.sucess),
+                        getString(R.string.sucess_update),
+                        new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                finish();
                             }
-                        })
-                        .show();
+                        },
+                        null
+                );
             } else {
-                new AlertDialog.Builder(AddClass.this).setTitle(R.string.fail).
-                        setMessage(R.string.fail_update)
-                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                AlertDialogCustom.showDialog(
+                        AddClass.this,
+                        getString(R.string.sucess),
+                        getString(R.string.fail_update),
+                        new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
                             }
-                        })
-                        .show();
+                        },
+                        null
+                );
             }
         } else {
             if (dao.insertPecaClas(pecaClas)) {
-                new AlertDialog.Builder(AddClass.this).setTitle(R.string.sucess).
-                        setMessage(R.string.sucess_insert)
-                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                            }
-                        })
-                        .show();
+                AlertDialogCustom.showDialog(
+                    AddClass.this,
+                    getString(R.string.sucess),
+                    getString(R.string.sucess_insert),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    },
+                    null
+                );
             } else {
-                new AlertDialog.Builder(AddClass.this).setTitle(R.string.fail).
-                        setMessage(R.string.fail_insert)
-                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                AlertDialogCustom.showDialog(
+                        AddClass.this,
+                        getString(R.string.fail),
+                        getString(R.string.fail_insert),
+                        new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
                             }
-                        })
-                        .show();
+                        },
+                        null
+                );
             }
         }
     }
@@ -215,16 +231,18 @@ public class AddClass extends AppCompatActivity {
             PecaTipo pecaTipo = new PecaTipo();
             insertPecaTipoBd(pecaTipo.convertJsonToList(ja));
         } else {
-            new AlertDialog.Builder(AddClass.this)
-                    .setTitle(R.string.fail)
-                    .setMessage(R.string.fail_the_comunication_with_web_service)
-                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            finish();
-                        }
-                    })
-                    .show();
+            AlertDialogCustom.showDialog(
+                AddClass.this,
+                getString(R.string.fail),
+                getString(R.string.fail_the_comunication_with_web_service),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                },
+                null
+            );
         }
     }
 
@@ -240,15 +258,18 @@ public class AddClass extends AppCompatActivity {
         }
 
         if (erroInsert){
-            new AlertDialog.Builder(AddClass.this).setTitle(R.string.sucess).
-                    setMessage(R.string.fail_insert)
-                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .show();
+            AlertDialogCustom.showDialog(
+                AddClass.this,
+                getString(R.string.sucess),
+                getString(R.string.fail_insert),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                },
+                null
+            );
         }
     }
 
@@ -264,12 +285,24 @@ public class AddClass extends AppCompatActivity {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Calendar c = Calendar.getInstance();
-            return new DatePickerDialog( getActivity(), this, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH) );
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            // Usando o tema personalizado para o DatePickerDialog
+            return new DatePickerDialog(getActivity(), R.style.CustomDialogTheme, this, year, month, day);
         }
 
+        @Override
         public void onDateSet(DatePicker view, int year, int month, int day) {
             et_data.setText((day < 10 ? "0" + day : day) + "/" + ((month + 1) < 10 ? "0" + (month + 1) : (month + 1)) + "/" + year);
-            try {date = UtilLocal.parseStringToDate(et_data.getText().toString());} catch (Exception ex) {date = UtilLocal.getDataAtual(); et_data.setText(UtilLocal.formatDate(date));}
+            try {
+                date = UtilLocal.parseStringToDate(et_data.getText().toString());
+            } catch (Exception ex) {
+                date = UtilLocal.getDataAtual();
+                et_data.setText(UtilLocal.formatDate(date));
+            }
         }
     }
+
 }

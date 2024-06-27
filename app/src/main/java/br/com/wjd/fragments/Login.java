@@ -20,6 +20,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import br.com.wjd.Classes.AlertDialogCustom;
 import br.com.wjd.Classes.ServiceFunction;
 import br.com.wjd.R;
 import br.com.wjd.UtilLocal;
@@ -104,34 +105,43 @@ public class Login extends AppCompatActivity {
                             finish();
                         }
                         else {
-                            new AlertDialog.Builder(Login.this).setTitle(R.string.fail).
-                                    setMessage(R.string.fail_the_comunication_with_web_service)
-                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            AlertDialogCustom.showDialog(
+                                    Login.this,
+                                    getString(R.string.fail),
+                                    getString(R.string.fail_the_comunication_with_web_service),
+                                    new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                         }
-                                    })
-                                    .show();
+                                    },
+                                    null
+                            );
                         }
                     } else {
-                        new AlertDialog.Builder(Login.this).setTitle(R.string.attention).
-                                setMessage(R.string.info_webservice_not_found)
-                                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        AlertDialogCustom.showDialog(
+                                Login.this,
+                                getString(R.string.attention),
+                                getString(R.string.info_webservice_not_found),
+                                new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                     }
-                                })
-                                .show();
+                                },
+                                null
+                        );
                     }
                 } else {
-                    new AlertDialog.Builder(Login.this).setTitle(R.string.fail).
-                            setMessage(message)
-                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    AlertDialogCustom.showDialog(
+                            Login.this,
+                            getString(R.string.fail),
+                            message,
+                            new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                 }
-                            })
-                            .show();
+                            },
+                            null
+                    );
                 }
             }
         });
