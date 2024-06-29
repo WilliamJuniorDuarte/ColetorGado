@@ -18,16 +18,15 @@ import android.os.IBinder;
 import android.os.Message;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
@@ -568,8 +567,8 @@ public class Leitura extends AppCompatActivity {
 
         sp_classe = findViewById(R.id.spin_classe);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(Leitura.this, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(Leitura.this, R.layout.spinner_item);
+        adapter.setDropDownViewResource(R.layout.spinner_item);
 
         for (PecaClas pecaClas : listPecaClas) {
             adapter.add(pecaClas.getNomeclas());
@@ -1161,5 +1160,16 @@ public class Leitura extends AppCompatActivity {
         listView.refreshDrawableState();
         adapterTags.notifyDataSetChanged();
         total.setText(String.valueOf(adapterTags.getCount()));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

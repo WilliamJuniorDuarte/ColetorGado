@@ -2,11 +2,9 @@ package br.com.wjd.fragments;
 
 import android.app.ActivityManager;
 import android.content.SharedPreferences;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 
-import androidx.core.app.NavUtils;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +12,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import br.com.wjd.R;
 import br.com.wjd.adapters.MyFragmentPagerAdapter;
-import br.com.wjd.fragments.Inicial;
 
 public class Configuracao extends AppCompatActivity {
 
@@ -53,10 +50,14 @@ public class Configuracao extends AppCompatActivity {
         activityManager.moveTaskToFront(getTaskId(), 0);
     }
 
-    //Sobrescreve o botão Back do android, pois, tem um comportamente diferente do Back do próprio APP
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        NavUtils.navigateUpFromSameTask(this);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

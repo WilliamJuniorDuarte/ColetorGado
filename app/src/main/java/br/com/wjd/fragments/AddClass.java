@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -103,8 +104,7 @@ public class AddClass extends AppCompatActivity {
                         message,
                         new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
+                            public void onClick(DialogInterface dialog, int which) { }
                         },
                         null
                     );
@@ -129,6 +129,8 @@ public class AddClass extends AppCompatActivity {
         loadRecyclerView();
     }
 
+
+
     private void savePecaClas() {
         pecaClas.setNomeclas(name.getText().toString());
         pecaClas.setDataclas(et_data.getText().toString());
@@ -141,8 +143,7 @@ public class AddClass extends AppCompatActivity {
                         getString(R.string.sucess_update),
                         new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
+                            public void onClick(DialogInterface dialog, int which) { finish(); }
                         },
                         null
                 );
@@ -153,8 +154,7 @@ public class AddClass extends AppCompatActivity {
                         getString(R.string.fail_update),
                         new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
+                            public void onClick(DialogInterface dialog, int which) { }
                         },
                         null
                 );
@@ -167,9 +167,7 @@ public class AddClass extends AppCompatActivity {
                     getString(R.string.sucess_insert),
                     new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
+                        public void onClick(DialogInterface dialog, int which) { finish(); }
                     },
                     null
                 );
@@ -180,13 +178,22 @@ public class AddClass extends AppCompatActivity {
                         getString(R.string.fail_insert),
                         new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
+                            public void onClick(DialogInterface dialog, int which) { }
                         },
                         null
                 );
             }
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -264,9 +271,7 @@ public class AddClass extends AppCompatActivity {
                 getString(R.string.fail_insert),
                 new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
+                    public void onClick(DialogInterface dialog, int which) { }
                 },
                 null
             );

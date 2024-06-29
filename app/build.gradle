@@ -22,7 +22,7 @@ android {
         minSdkVersion 24
         targetSdkVersion 31    //Versão padrão para o aplicativo
         versionCode 1
-        versionName "2.0"
+        versionName "3.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 

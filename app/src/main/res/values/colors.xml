@@ -2,7 +2,8 @@
 
     <color name="primaryColor">#344BDA</color>
     <color name="secondColor">#37318C</color>
-    <color name="backgroundColor">#E5E6E6</color>
+    <color name="backgroundColor">#D9DEFF</color>
     <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>
