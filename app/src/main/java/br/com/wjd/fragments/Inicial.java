@@ -10,7 +10,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
 
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import br.com.wjd.Classes.AlertDialogCustom;
 import br.com.wjd.R;
@@ -26,6 +29,15 @@ import br.com.wjd.bluetooth.Main_Bluetooth;
 public class Inicial extends AppCompatActivity {
 
     private Toolbar toolbar;
+    private int backPressCount = 0;
+    private Handler handler = new Handler();
+    private Runnable resetBackPressCount = new Runnable() {
+        @Override
+        public void run() {
+            backPressCount = 0;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +82,24 @@ public class Inicial extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return false;
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            backPressCount++;
+
+            if (backPressCount == 1) {
+                Toast.makeText(this, "Pressione novamente para sair!", Toast.LENGTH_SHORT).show();
+
+                // Reseta o contador após 2 segundos
+                handler.postDelayed(resetBackPressCount, 2000);
+                return true;
+            }
+
+            if (backPressCount == 2) {
+                finish();
+            }
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
@@ -82,7 +111,6 @@ public class Inicial extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        // Set the color of overflow icon (three dots) to white
         Drawable overflowIcon = toolbar.getOverflowIcon();
         if (overflowIcon != null) {
             overflowIcon.setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_ATOP);

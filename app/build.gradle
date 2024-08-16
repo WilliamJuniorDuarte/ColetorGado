@@ -8,21 +8,12 @@ android {
             targetCompatibility JavaVersion.VERSION_1_8
         }
 
-    splits {
-        abi {
-            enable true
-            reset()
-            include 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'mips', 'mips64', 'arm64-v8a'
-            universalApk false
-        }
-    }
-
     defaultConfig {
         applicationId "br.com.jd"
         minSdkVersion 24
-        targetSdkVersion 31    //Versão padrão para o aplicativo
+        targetSdkVersion 31
         versionCode 1
-        versionName "3.0"
+        versionName "4.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
